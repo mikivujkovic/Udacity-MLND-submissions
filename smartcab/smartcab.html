@@ -13705,11 +13705,11 @@ O7EAAAAASUVORK5CYII=
 <p><strong>Answer:</strong></p>
 <p>Safety:<br>
 Most relevant features for safety are:<br>
-waypoint: the direction of the smartcab is important because it determines the path of possible collisions
 light - going trough the red light is the most dangerous action available<br>
 left - direction of the vehicle comming from the left is important if that vehicle is going straight and crosses the smartcab way or if both vehicles are making left turns<br>
 oncoming - if smartcab is making left turn and oncoming is going straight accident could happen<br>
-right - if both vehicles conform to U.S. traffic rules, right should not be important</p>
+right - if both vehicles conform to U.S. traffic rules, right should not be important<br>
+waypoint - waypoint is important because if we have a red light and no vehicle on the left going forward, we can make a right turn and if we have a green light and oncoming vehicle is going forward, we should not go left</p>
 <p>Efficiency:<br>
 waypoint: the direction is important if you want to get to the target in the lowest number of steps<br>
 deadline: I dont think deadline is important for efficiency since it only determines remaining time to reach destination</p>
@@ -19729,20 +19729,20 @@ state [left, left, green, None] action should be Left</p>
  -- left : 1.49<br>
  Left is a correct action since there is a green light and we can pass by oncoming vehicle going left.</p>
 <p><strong>Samples - non optimal policy:</strong></p>
-<p>line 17:<br>
- ('left', 'forward', 'green', None)<br>
- -- forward : 0.59<br>
- -- right : 0.37<br>
- -- None : -5.13<br>
- -- left : -20.26<br>
- Correct answer would be None since we have to let the oncoming vehicle first.</p>
-<p>line 23:<br>
- ('right', 'left', 'red', 'left')<br>
- -- forward : -10.14<br>
- -- right : 1.82<br>
- -- None : 1.32<br>
- -- left : -17.32<br>
- Correct answer would be None due to red light.</p>
+<p>line 53:<br>
+ ('right', 'left', 'red', None)<br>
+ -- forward : -13.55<br>
+ -- right : 1.16<br>
+ -- None : 1.64<br>
+ -- left : -9.97<br>
+ Correct answer would be right since we don't have vehicle from the left.</p>
+<p>line 155:<br>
+ ('right', 'forward', 'red', 'right')<br>
+ -- forward : -9.50<br>
+ -- right : 1.57<br>
+ -- None : 1.59<br>
+ -- left : -9.54<br>
+ Correct answer would be right since we don't have vehicle from the left going forward.</p>
 
 </div>
 </div>
